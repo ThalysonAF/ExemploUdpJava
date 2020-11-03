@@ -1,3 +1,4 @@
+//EMISSOR
 package br.ufs.dcomp.ExemploUdpJava;
 
 import java.net.*;
@@ -7,13 +8,17 @@ public class AppUDP1 {
     public static void main(String[] args) throws SocketException {
         try{
             System.out.print("[ Alocando porta UDP      ..................  ");
+            //Criando o socket (Origem)
     	    DatagramSocket socket = new DatagramSocket(10000);
             System.out.println("[OK] ]");
             
             String msg = "Olá!!!";
             
+            //Mensagem
             byte[] msg_buf = msg.getBytes();
+            //Tamanho da mensagem
             int msg_size = msg_buf.length;
+            //IP e Porta de destino (Máquina de origem e destino é a mesma "local")
             InetAddress destination_address = InetAddress.getLocalHost();
             int destination_port = 20000; 
 
